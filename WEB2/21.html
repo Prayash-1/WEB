@@ -1,0 +1,39 @@
+<!-- 21. Write a jQuery program to animate a box so that it moves to the right and changes its 
+width using the animate() method.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Animation</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<h2>jQuery Animate Box</h2>
+
+<button id="animateBtn">Animate</button>
+<br><br>
+
+<div id="box"></div>
+
+<script>
+$(document).ready(function() {
+    $("#animateBtn").click(function() {
+        $("#box").animate({
+            left: "300px",
+            width: "200px"
+        }, 1000);
+    });
+});
+</script>
+
+</body>
+</html>

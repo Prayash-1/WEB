@@ -1,0 +1,46 @@
+<!-- 22. Create a small image gallery where clicking a thumbnail changes the main displayed 
+image using jQuery.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #mainImage {
+            width: 400px;
+            height: 250px;
+            border: 2px solid black;
+        }
+
+        .thumb {
+            width: 100px;
+            height: 70px;
+            margin: 10px;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Image Gallery</h2>
+
+<img id="mainImage" src="/images.jpg" alt="Main Image">
+<br>
+
+<img class="thumb" src="/images.jpg">
+<img class="thumb" src="/images (2).jpg">
+<img class="thumb" src="/images (3).jpg">
+
+<script>
+$(document).ready(function() {
+    $(".thumb").click(function() {
+        let imagePath = $(this).attr("src");
+        $("#mainImage").attr("src", imagePath);
+    });
+});
+</script>
+
+</body>
+</html>

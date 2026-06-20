@@ -1,0 +1,73 @@
+<!-- 8. Write JavaScript program that use countries array to
+  display 50 countries into tabular format 6 countries in a row. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countries Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>50 Countries in Tabular Format</h2>
+
+    <button onclick="displayCountries()">Display Countries</button>
+
+    <div id="output"></div>
+
+    <script>
+        function displayCountries() {
+            let countries = [
+                "Nepal", "India", "China", "Japan", "South Korea", "Thailand",
+                "Malaysia", "Singapore", "Indonesia", "Philippines", "Vietnam", "Pakistan",
+                "Bangladesh", "Sri Lanka", "Bhutan", "Maldives", "Australia", "New Zealand",
+                "United States", "Canada", "Mexico", "Brazil", "Argentina", "Chile",
+                "United Kingdom", "France", "Germany", "Italy", "Spain", "Portugal",
+                "Netherlands", "Belgium", "Switzerland", "Austria", "Norway", "Sweden",
+                "Denmark", "Finland", "Russia", "Turkey", "Saudi Arabia", "UAE",
+                "Qatar", "Egypt", "South Africa", "Kenya", "Nigeria", "Ghana",
+                "Morocco", "Greece"
+            ];
+
+            let table = "<table>";
+
+            for (let i = 0; i < countries.length; i++) {
+                if (i % 6 === 0) {
+                    table += "<tr>";
+                }
+
+                table += "<td>" + countries[i] + "</td>";
+
+                if (i % 6 === 5) {
+                    table += "</tr>";
+                }
+            }
+
+            table += "</table>";
+
+            document.getElementById("output").innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>

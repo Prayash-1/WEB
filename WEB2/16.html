@@ -1,0 +1,130 @@
+<!-- 16. Design and validate form with following condition using HTML, CSS and JavaScript. 
+a. Form field: Name, Address, Username, Email, Password, Website, Phone, 
+Gender(Radio), Course(Dropdown), 
+b. Name Validation: We check to make sure the name field is not empty and does 
+not contain any numbers. 
+c. Username Validation: We check to make sure the username field is not empty and 
+does not contain any spaces and special character except underscore (_). 
+d. Phone Validation: We check to make sure the phone field is not empty, does not 
+contain any character except numbers, and should start with [98/97/96]. 
+e. Gender Validation: We check the gender field is not empty. 
+f. Address Validation: We check that the address field is not empty. 
+g. Email Validation: We make sure that the email field is not empty and that it 
+includes the “@” symbol. 
+h. Password Validation: We ensure that the password field is not empty and that the 
+password is at least eight characters long with at least one digit, one upper case 
+character, one lowercase character and one special character. 
+i. Course Selection Validation: We check that a course has been selected from a 
+dropdown list. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        input, select {
+            margin: 8px;
+            padding: 8px;
+            width: 250px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form Validation</h2>
+
+<form onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><br>
+    Address: <input type="text" id="address"><br>
+    Username: <input type="text" id="username"><br>
+    Email: <input type="text" id="email"><br>
+    Password: <input type="password" id="password"><br>
+    Website: <input type="text" id="website"><br>
+    Phone: <input type="text" id="phone"><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br>
+
+    Course:
+    <select id="course">
+        <option value="">Select Course</option>
+        <option value="BIM">BIM</option>
+        <option value="BCA">BCA</option>
+        <option value="BIT">BIT</option>
+    </select>
+    <br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<p id="message" class="error"></p>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("course").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let message = document.getElementById("message");
+
+    let namePattern = /^[A-Za-z ]+$/;
+    let usernamePattern = /^[A-Za-z0-9_]+$/;
+    let phonePattern = /^(98|97|96)[0-9]{8}$/;
+    let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if (name == "" || !namePattern.test(name)) {
+        message.innerHTML = "Name is required and must not contain numbers.";
+        return false;
+    }
+
+    if (address == "") {
+        message.innerHTML = "Address is required.";
+        return false;
+    }
+
+    if (username == "" || !usernamePattern.test(username)) {
+        message.innerHTML = "Username is required and only underscore is allowed.";
+        return false;
+    }
+
+    if (email == "" || !email.includes("@")) {
+        message.innerHTML = "Valid email is required.";
+        return false;
+    }
+
+    if (!passwordPattern.test(password)) {
+        message.innerHTML = "Password must be 8 characters with uppercase, lowercase, digit and special character.";
+        return false;
+    }
+
+    if (!phonePattern.test(phone)) {
+        message.innerHTML = "Phone must start with 98, 97 or 96 and contain 10 digits.";
+        return false;
+    }
+
+    if (gender == null) {
+        message.innerHTML = "Gender is required.";
+        return false;
+    }
+
+    if (course == "") {
+        message.innerHTML = "Please select a course.";
+        return false;
+    }
+
+    alert("Form submitted successfully.");
+    return true;
+}
+</script>
+
+</body>
+</html>

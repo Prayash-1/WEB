@@ -1,0 +1,39 @@
+<!-- 12. Create a digital clock using HTML, CSS and JavaScript. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 100px;
+        }
+        #clock {
+            font-size: 50px;
+            background-color: purple;
+            color: white;
+            padding: 30px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Digital Clock</h1>
+<div id="clock"></div>
+
+<script>
+function showClock() {
+    let date = new Date();
+    let time = date.toLocaleTimeString();
+    document.getElementById("clock").innerHTML = time;
+}
+
+setInterval(showClock, 1000);
+showClock();
+</script>
+
+</body>
+</html>

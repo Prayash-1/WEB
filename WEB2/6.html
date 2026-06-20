@@ -1,0 +1,132 @@
+<!-- 6. Write JavaScript program to perform following steps of task for DOM manipulation 
+a. Create an index.html file and put four p elements as above: Get the first paragraph 
+by using document.querySelector(tagname) and tag name 
+b. Get each of the the paragraph using document.querySelector('#id') and by their id 
+c. Get all the p as nodeList using document.querySelectorAll(tagname) and by their 
+tag name 
+d. Loop through the nodeList and get the text content of each paragraph 
+e. Set a text content to paragraph the fourth paragraph,Fourth Paragraph 
+f. 
+Set id and class attribute for all the paragraphs using different attribute setting 
+methods 
+g. Change stye of each paragraph using JavaScript(eg. color, background, border, 
+font-size, font-family) 
+h. Select all paragraphs and loop through each elements and give the first and third 
+paragraph a color of green, and the second and the fourth paragraph a red color 
+i. 
+Set text content, id and class to each paragraph  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <h2>JavaScript DOM Manipulation</h2>
+
+    <!-- Four paragraph elements -->
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <p>Fourth paragraph old text</p>
+
+    <button onclick="manipulateDOM()">Perform DOM Manipulation</button>
+
+    <h3>Output:</h3>
+    <div id="output"></div>
+
+    <script>
+        function manipulateDOM() {
+
+            // a. Get the first paragraph using document.querySelector(tagname)
+            let firstParagraph = document.querySelector("p");
+
+            // b. Set id attributes first so each paragraph can be selected by id
+            let allParagraphs = document.querySelectorAll("p");
+
+            allParagraphs[0].setAttribute("id", "para1");
+            allParagraphs[1].setAttribute("id", "para2");
+            allParagraphs[2].setAttribute("id", "para3");
+            allParagraphs[3].setAttribute("id", "para4");
+
+            // b. Get each paragraph using document.querySelector('#id')
+            let paragraph1 = document.querySelector("#para1");
+            let paragraph2 = document.querySelector("#para2");
+            let paragraph3 = document.querySelector("#para3");
+            let paragraph4 = document.querySelector("#para4");
+
+            // c. Get all p elements as NodeList using querySelectorAll(tagname)
+            let paragraphs = document.querySelectorAll("p");
+
+            // d. Loop through NodeList and get text content
+            let result = "<strong>Text content of paragraphs:</strong><br>";
+
+            paragraphs.forEach(function(paragraph, index) {
+                result += "Paragraph " + (index + 1) + ": " + paragraph.textContent + "<br>";
+            });
+
+            // e. Set text content to fourth paragraph
+            paragraph4.textContent = "Fourth Paragraph";
+
+            // f. Set id and class attributes using different methods
+            paragraph1.className = "first-class";
+            paragraph2.setAttribute("class", "second-class");
+            paragraph3.id = "thirdParagraph";
+            paragraph3.classList.add("third-class");
+            paragraph4.setAttribute("class", "fourth-class");
+
+            // g. Change style of each paragraph using JavaScript
+            paragraph1.style.backgroundColor = "lightyellow";
+            paragraph1.style.border = "2px solid black";
+            paragraph1.style.fontSize = "18px";
+            paragraph1.style.fontFamily = "Arial";
+
+            paragraph2.style.backgroundColor = "lightblue";
+            paragraph2.style.border = "2px dashed black";
+            paragraph2.style.fontSize = "18px";
+            paragraph2.style.fontFamily = "Verdana";
+
+            paragraph3.style.backgroundColor = "lightgray";
+            paragraph3.style.border = "2px dotted black";
+            paragraph3.style.fontSize = "18px";
+            paragraph3.style.fontFamily = "Georgia";
+
+            paragraph4.style.backgroundColor = "pink";
+            paragraph4.style.border = "2px solid purple";
+            paragraph4.style.fontSize = "18px";
+            paragraph4.style.fontFamily = "Tahoma";
+
+            // h. Loop through all paragraphs and give first and third green color,
+            // second and fourth red color
+            paragraphs.forEach(function(paragraph, index) {
+                if (index === 0 || index === 2) {
+                    paragraph.style.color = "green";
+                } else {
+                    paragraph.style.color = "red";
+                }
+            });
+
+            // i. Set text content, id and class to each paragraph
+            paragraphs[0].textContent = "This is First Paragraph";
+            paragraphs[0].id = "first";
+            paragraphs[0].className = "paragraph-one";
+
+            paragraphs[1].textContent = "This is Second Paragraph";
+            paragraphs[1].id = "second";
+            paragraphs[1].className = "paragraph-two";
+
+            paragraphs[2].textContent = "This is Third Paragraph";
+            paragraphs[2].id = "third";
+            paragraphs[2].className = "paragraph-three";
+
+            paragraphs[3].textContent = "Fourth Paragraph";
+            paragraphs[3].id = "fourth";
+            paragraphs[3].className = "paragraph-four";
+
+            // Display output
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- 19. Write a JavaScript program that displays: 
+a. Screen width  
+b. Screen height  
+c. Available screen width -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Object</title>
+</head>
+<body>
+
+<h2>Screen Information</h2>
+
+<button onclick="showScreenInfo()">Show Screen Info</button>
+<p id="result"></p>
+
+<script>
+function showScreenInfo() {
+    document.getElementById("result").innerHTML =
+        "Screen Width: " + screen.width + "<br>" +
+        "Screen Height: " + screen.height + "<br>" +
+        "Available Screen Width: " + screen.availWidth + "<br>";
+}
+</script>
+
+</body>
+</html>

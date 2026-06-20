@@ -1,0 +1,103 @@
+<!-- 9. Write JavaScript program that generate numbers from 1 to user input number and 
+marking evens, odds and prime numbers with three different colors  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Odd Prime Number Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            width: 800px;
+            margin-top: 20px;
+        }
+
+        .number-box {
+            width: 50px;
+            height: 40px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+        }
+
+        .prime {
+            background-color: red;
+            color: white;
+        }
+
+        .even {
+            background-color: green;
+            color: white;
+        }
+
+        .odd {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Generate Numbers and Mark Even, Odd and Prime</h2>
+
+    <label>Enter a Number:</label>
+    <input type="number" id="userNumber">
+
+    <button onclick="generateNumbers()">Generate</button>
+
+    <div id="container"></div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function generateNumbers() {
+            let userInput = parseInt(document.getElementById("userNumber").value);
+            let container = document.getElementById("container");
+
+            container.innerHTML = "";
+
+            if (isNaN(userInput) || userInput < 1) {
+                container.innerHTML = "Please enter a valid number";
+                return;
+            }
+
+            for (let i = 1; i <= userInput; i++) {
+                let box = document.createElement("div");
+
+                box.textContent = i;
+                box.className = "number-box";
+
+                if (isPrime(i)) {
+                    box.classList.add("prime");
+                } else if (i % 2 === 0) {
+                    box.classList.add("even");
+                } else {
+                    box.classList.add("odd");
+                }
+
+                container.appendChild(box);
+            }
+        }
+    </script>
+
+</body>
+</html>

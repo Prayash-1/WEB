@@ -1,0 +1,32 @@
+<!-- 2. Write a JavaScript program to calculate addition, subtraction, multiplication and division 
+of two numbers (input from user). -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Enter valid numbers");
+                return;
+            }
+            document.getElementById("result").innerHTML =
+                `Sum: ${num1+num2}<br>
+                 Difference: ${num1-num2}<br>
+                 Product: ${num1*num2}<br>
+                 Quotient: ${num1/num2}<br>
+                 Remainder: ${num1%num2}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Arithmetic Calculator</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="calculate()">Calculate</button>
+    <h2>Results:</h2>
+    <div id="result"></div>
+</body>
+</html>

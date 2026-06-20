@@ -1,0 +1,22 @@
+<!-- 5. Write a JavaScript program to calculate age taking input using form.  -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <script>
+        function calculateAge() {
+            let birthYear = parseInt(document.getElementById("birth").value);
+            let currentYear = new Date().getFullYear();
+            if (isNaN(birthYear)) { alert("Enter year"); return; }
+            let age = currentYear - birthYear;
+            document.getElementById("result").innerHTML = "Your Age: " + age;
+        }
+    </script>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    Enter Birth Year: <input type="number" id="birth">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="result"></div>
+</body>
+</html>

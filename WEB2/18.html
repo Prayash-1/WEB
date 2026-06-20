@@ -1,0 +1,28 @@
+<!-- 18. Write a JavaScript program that takes website URL from user and open that url into new 
+tab.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open URL</title>
+</head>
+<body>
+
+<h2>Open Website in New Tab</h2>
+
+<input type="text" id="url" placeholder="Enter website URL">
+<button onclick="openWebsite()">Open Website</button>
+
+<script>
+function openWebsite() {
+    let url = document.getElementById("url").value;
+
+    if (url == "") {
+        alert("Please enter a URL.");
+    } else {
+        window.open(url, "_blank");
+    }
+}
+</script>
+
+</body>
+</html>

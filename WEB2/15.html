@@ -1,0 +1,72 @@
+<!-- 15. Write JavaScript program with different button and paragraph and perform following 
+event according to button pressed  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Events</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 5px;
+        }
+        p {
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Button Event Program</h2>
+
+<p id="para">This is a paragraph. Click buttons to change it.</p>
+
+<button onclick="changeBackground()">Change Background</button>
+<button onclick="changeParagraphBackground()">Change Paragraph Background</button>
+<button onclick="hideParagraph()">Hide Paragraph</button>
+<button onclick="showParagraph()">Show Paragraph</button>
+<button onclick="increaseFont()">Increase Font</button>
+<button onclick="decreaseFont()">Decrease Font</button>
+<button onclick="resetFont()">Reset Font</button>
+<button onclick="changeTextColor()">Change Text Color</button>
+
+<script>
+let size = 12;
+
+function changeBackground() {
+    document.body.style.backgroundColor = "lightblue";
+}
+
+function changeParagraphBackground() {
+    document.getElementById("para").style.backgroundColor = "yellow";
+}
+
+function hideParagraph() {
+    document.getElementById("para").style.display = "none";
+}
+
+function showParagraph() {
+    document.getElementById("para").style.display = "block";
+}
+
+function increaseFont() {
+    size += 2;
+    document.getElementById("para").style.fontSize = size + "pt";
+}
+
+function decreaseFont() {
+    size -= 2;
+    document.getElementById("para").style.fontSize = size + "pt";
+}
+
+function resetFont() {
+    size = 12;
+    document.getElementById("para").style.fontSize = "12pt";
+}
+
+function changeTextColor() {
+    document.getElementById("para").style.color = "red";
+}
+</script>
+
+</body>
+</html>

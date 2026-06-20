@@ -1,0 +1,44 @@
+<!-- 17. Write a JavaScript program that displays the following 
+ information using the Navigator 
+Object: 
+a. 
+Browser name  
+b. Browser version  
+c. 
+Platform (OS) 
+d. geolocation  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigator Object</title>
+</head>
+<body>
+
+<h2>Navigator Object Information</h2>
+
+<button onclick="showInfo()">Show Browser Info</button>
+<p id="output"></p>
+
+<script>
+function showInfo() {
+    let output = "";
+    output += "Browser Name: " + navigator.appName + "<br>";
+    output += "Browser Version: " + navigator.appVersion + "<br>";
+    output += "Platform: " + navigator.platform + "<br>";
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            output += "Latitude: " + position.coords.latitude + "<br>";
+            output += "Longitude: " + position.coords.longitude + "<br>";
+            document.getElementById("output").innerHTML = output;
+        });
+    } else {
+        output += "Geolocation is not supported.";
+        document.getElementById("output").innerHTML = output;
+    }
+}
+</script>
+
+</body>
+</html>

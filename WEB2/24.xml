@@ -1,0 +1,17 @@
+<!-- 24. Write a program to list of books details into xml format  -->
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <title>Web Technology</title>
+        <author>Basanta Chapagain</author>
+        <price>500</price>
+        <publisher>SDC Publication</publisher>
+    </book>
+
+    <book>
+        <title>JavaScript Basics</title>
+        <author>John Smith</author>
+        <price>600</price>
+        <publisher>Tech Books</publisher>
+    </book>
+</books>

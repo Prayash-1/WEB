@@ -1,0 +1,34 @@
+<!-- //13. Write a JavaScript program to store, read and delete cookie from browser.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Example</title>
+</head>
+<body>
+
+<h2>Cookie Example</h2>
+
+<button onclick="setCookie()">Store Cookie</button>
+<button onclick="readCookie()">Read Cookie</button>
+<button onclick="deleteCookie()">Delete Cookie</button>
+
+<p id="result"></p>
+
+<script>
+function setCookie() {
+    document.cookie = "username=Student; expires=Fri, 31 Dec 2027 12:00:00 UTC; path=/";
+    document.getElementById("result").innerHTML = "Cookie stored successfully.";
+}
+
+function readCookie() {
+    document.getElementById("result").innerHTML = "Cookie: " + document.cookie;
+}
+
+function deleteCookie() {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    document.getElementById("result").innerHTML = "Cookie deleted successfully.";
+}
+</script>
+
+</body>
+</html>
