@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+header {
+    background-color: #555a8a;
+    height: 50px;
+    text-align: center;
+}
+nav {
+    background-color: #7b8a7b; 
+    height: 30px;
+}
+.leftside {
+    background-color: #ab5757;
+    float: left;
+    width: 25%;
+    height: 300px;
+}
+.center {
+    background-color: #00b0ff;
+    float: left;
+    width: 50%;
+    height: 300px;
+}
+.right {
+    background-color: #8c82ff;
+    float: left;
+    width: 25%;
+    height: 300px;
+}
+footer {
+    background-color: #888;
+    clear: both; 
+    height: 30px;
+}

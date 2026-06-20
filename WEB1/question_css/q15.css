@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column; 
+}
+.row {
+    display: flex; 
+}
+.item {
+    flex: 1;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #444;
+}
+.area-1 { background-color: #ffb878; }
+.area-2 { background-color: #94bed9; }
+.area-3 { background-color: #82d6a2; }
+.area-4 { background-color: #f19a92; }
+.area-5 { background-color: #e9ce81; }
+.area-6 { background-color: #b0a3e3; }

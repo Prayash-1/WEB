@@ -1,0 +1,23 @@
+.timetable {
+    border-collapse: collapse;
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+}
+.timetable,.timetable th,.timetable td {
+    border: 2px solid black;
+}
+
+.timetable th,.timetable td {
+    padding: 5px;
+}
+
+.title {
+    font-size: 10px;
+    background-color: #f2f2f2;
+}
+
+.lunch {
+    background-color: #ddd;
+    font-weight: bold;
+}

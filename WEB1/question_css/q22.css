@@ -1,0 +1,85 @@
+body {
+    background-color: #f0f2f5;
+    display: flex;justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;   border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 850px;  width: 100%;
+}
+
+header {
+    display: flex; flex-direction: column;
+    align-items: flex-start;
+}
+
+.lang-switch {
+    align-self: flex-end;
+    font-size: 14px; cursor: pointer;
+}
+
+.logo-area {
+    display: flex;  align-items: center;
+    gap: 10px;  margin-bottom: 20px;
+}
+
+.logo { height: 50px; }
+.org-name { font-size: 20px; font-weight: bold; }
+
+h2 { font-size: 24px; margin-bottom: 25px; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.input-group label {
+    display: block; font-size: 14px;
+    font-weight: bold;    margin-bottom: 5px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;  padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;   border-color: #1976d2;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
+}
+.span-2 { grid-column: span 2; }
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-back {
+    background: none;
+    border: 1px solid #1976d2;
+    color: #1976d2;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #1976d2;
+    border: none; color: white;
+    padding: 10px 30px; font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover { background: #1565c0; }
